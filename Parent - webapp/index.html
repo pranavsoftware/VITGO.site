@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Tracking Portal</title>
+    <link rel="stylesheet" href="../Parent - webapp/styles_hidden.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+        </div>
+        <div class="company-name">EasyCab Parent Portal</div>
+        <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
+    </header>
+    
+    <section class="content-section">
+        <h1>Welcome, <span id="username"></span></h1>
+        <div id="current-booking" class="booking-details"></div>
+        <div id="driver-info" class="driver-details"></div>
+
+        <div class="tracking-section">
+            <h2>Track Your Ward</h2>
+            <button id="startScanBtn" class="scan-btn">Start Tracking</button>
+            <button id="stopScanBtn" class="scan-btn" style="display: none;">Stop Scan</button>
+            <div id="scan-result"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="">Linkedln</a>
+        </div>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <script type="module" src="../Parent - webapp/app.js"></script>
+</body>
+</html>
