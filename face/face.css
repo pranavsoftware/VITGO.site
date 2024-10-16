@@ -1,0 +1,271 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    background: rgb(0 0 0 / 65%);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* Main Container */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* To offset fixed header */
+}
+
+.container {
+    display: flex;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Side Image */
+.side-image {
+    flex: 1; /* Take full space in flex container */
+}
+
+.side-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Auth Container */
+.auth-container {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.buttons h2 {
+    margin-bottom: 10px;
+}
+
+.buttons p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.buttons button:hover {
+    background: #0056b3;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form.hidden {
+    display: none;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Video Containers */
+#login-video-container,
+#register-video-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+video {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%; /* Make video responsive */
+}
+
+/* Buttons */
+button[type="button"] {
+    padding: 8px 16px;
+    border: none;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button[type="button"]:hover {
+    background: #218838;
+}
+
+/* Terms and Conditions */
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+.terms a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.form button[type="submit"] {
+    padding: 10px;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.form button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-links img:hover {
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .side-image {
+        display: block; /* Ensure side image is displayed */
+        width: 100%; /* Take full width on mobile */
+    }
+
+    .auth-container {
+        padding: 20px;
+    }
+
+    video {
+        width: 100%; /* Make video full width */
+    }
+
+    .buttons button {
+        margin: 10px 0; /* Adjust button spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px; /* Adjust header font size for smaller screens */
+    }
+
+    .form input {
+        font-size: 16px; /* Increase font size for inputs */
+    }
+
+    button {
+        font-size: 16px; /* Increase button font size */
+    }
+}
