@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Booking</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../Student Booking/Student_hidden.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to EasyCab</h1>
+        <div id="username"></div>
+        <button id="signOutBtn">Sign Out</button>
+        <button id="goBackBtn">Go Back</button>
+    </header>
+
+    <main>
+        <section id="current-booking">
+            <h2>Your Current Booking</h2>
+            <!-- Current booking details will be displayed here -->
+        </section>
+
+        <section>
+            <h2>Book a Taxi</h2>
+            <form id="booking-form">
+                <label for="car">Select Car:</label>
+                <select id="car" required>
+                    <option value="Tata Zest">Tata Zest</option>
+                    <option value="Dzire">Dzire</option>
+                    <option value="Innova">Innova</option>
+                </select>
+                <label for="noOfStudents">Number of Students:</label>
+                <input type="number" id="noOfStudents" min="1" required>
+                <label for="from">From:</label>
+                <input type="text" id="from" required>
+                <label for="to">To:</label>
+                <input type="text" id="to" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+                <label for="paymentMode">Payment Mode:</label>
+                <select id="paymentMode" required>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                </select>
+                <label for="message">Message:</label>
+                <textarea id="message"></textarea>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>View Driver Details</h2>
+            <input type="text" id="bookingIdInput" placeholder="Enter Booking ID">
+            <button id="viewDriverDetailsBtn">View Driver Details</button>
+            <div id="driver-info">
+                <!-- Driver details will be displayed here -->
+            </div>
+        </section>
+
+        <section id="scanner">
+            <h2>QR Code Scanner</h2>
+            <div id="reader" style="width: 300px; height: 300px;"></div>
+            <button id="startScanBtn">Start Scanning</button>
+            <button id="stopScanBtn" style="display:none;">Stop Scanning</button>
+            <div id="scan-result"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 EasyCab. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../Student Booking/Studentbooking.js"></script>
+</body>
+
+</html>
