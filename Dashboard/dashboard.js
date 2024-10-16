@@ -68,10 +68,10 @@ async function loadPlans() {
             <h3><span class="username">${plan.username}</span></h3>
             <p>University: ${plan.university}</p>
             <p>Date & Time: ${plan.dateTime}</p>
-            <p>From: ${plan.fromPlace}, ${plan.fromCity}, ${plan.fromState}</p>
-            <p>To: ${plan.toPlace}, ${plan.toCity}, ${plan.toState}</p>
+            <p>From: ${plan.fromState}, ${plan.fromCity}, ${plan.fromPlace}</p>
+            <p>To: ${plan.toState}, ${plan.toCity}, ${plan.toPlace}</p>
             <p>Message: ${plan.message}</p>
-            <div class="buttons">
+            <div class="buttons"> 
                 <button class="btn btn-connect" onclick="connectToChat('${plan.username}')">Connect</button>
                 <button class="btn btn-delete" onclick="deletePlan('${planId}', '${plan.username}')">Delete</button>
             </div>
