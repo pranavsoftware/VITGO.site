@@ -1,0 +1,22 @@
+{
+    "name": "EasyCab Driver Dashboard",
+    "short_name": "EasyCab",
+    "start_url": "../Driver Webapp/Driver.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "description": "Driver dashboard for EasyCab.",
+    "icons": [
+      {
+        "src": "../assets/logo.jpeg",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "../assets/logo.jpeg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

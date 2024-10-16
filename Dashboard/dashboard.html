@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Easycab-Dashboard</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <link rel="manifest" href="../index/manifest.json">
+    <link rel="stylesheet" href="../Dashboard/dashboard_hidden.css">
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"></script>
+    <script type="module" src="../Dashboard/dashboard.js" defer></script>
+</head>
+
+<body>
+    <header class="transparent-header">
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+            <h1>Easycab</h1>
+        </div>
+        <nav class="nav-menu">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="menu-list">
+                <li><a href="../Post/post plan.html">+Add Your Plan</a></li>
+                <li><a href="../webchat/index.html">Web-Chat</a></li>
+                <li><a href="../Start soon/index.html">Booking</a></li>
+                <li><a href="../Profile/user profiel.html">Profile</a></li>
+                <button id="signOutBtn">Sign Out</button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <div id="loading-spinner" style="display: none;">Loading...</div>
+
+        <aside id="filter-sidebar" class="filter-sidebar">
+            <h3>Filter Plans</h3>
+            <select id="universityFilter">
+                <option value="">Select University</option>
+                <option value="VIT Vellore">VIT Vellore</option>
+                <option value="VIT Chennai">VIT Chennai</option>
+                <option value="VIT Bhopal">VIT Bhopal</option>
+                <option value="VIT-AP Amaravati">VIT-AP Amaravati</option>
+
+            </select>
+            <select id="stateFilter" onchange="updateCities()">
+                <option value="">Select State</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu
+                </option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Ladakh">Ladakh</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+
+                </option>
+
+            </select>
+            <select id="cityFilter" onchange="updatePlaces()">
+                <option value="">Select City</option>
+            </select>
+            <select id="placeFilter">
+                <option value="">Select Place</option>
+            </select>
+            <button onclick="applyFilters()">Apply Filters</button>
+            <button onclick="resetFilters()">Reset Filters</button>
+        </aside>
+
+        <main class="main-content">
+            <section id="plansSection" class="plans-section">
+                <h2>User Plans</h2>
+                <div id="plansContainer" class="plans-container">
+                    <!-- Plans will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button class="filter-toggle" onclick="toggleFilter()">Filter</button>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi">Instagram</a> | <a
+                href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Easycab. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const cities = {
+            'Andaman and Nicobar Islands': ['Port Blair'],
+            'Andhra Pradesh': ['Guntur', 'Kakinada', 'Tirupati', 'Vijayawada', 'Visakhapatnam'],
+            'Arunachal Pradesh': ['Itanagar', 'Tawang', 'Ziro'],
+            'Assam': ['Dibrugarh', 'Guwahati', 'Jorhat', 'Silchar', 'Tezpur'],
+            'Bihar': ['Bhagalpur', 'Gaya', 'Muzaffarpur', 'Patna'],
+            'Chandigarh': ['Chandigarh'],
+            'Chhattisgarh': ['Bilaspur', 'Durg', 'Raipur'],
+            'Dadra and Nagar Haveli and Daman and Diu': ['Daman', 'Diu', 'Silvassa'],
+            'Delhi': ['Delhi'],
+            'Goa': ['Margao', 'Panaji', 'Vasco da Gama'],
+            'Gujarat': ['Ahmedabad', 'Gandhinagar', 'Rajkot', 'Surat', 'Vadodara'],
+            'Haryana': ['Faridabad', 'Gurgaon', 'Hisar', 'Panipat', 'Rohtak'],
+            'Himachal Pradesh': ['Dharamshala', 'Kullu', 'Manali', 'Shimla'],
+            'Jammu and Kashmir': ['Jammu', 'Leh', 'Srinagar'],
+            'Jharkhand': ['Bokaro', 'Dhanbad', 'Jamshedpur', 'Ranchi'],
+            'Karnataka': ['Bengaluru', 'Hubli', 'Mangalore', 'Mysore'],
+            'Kerala': ['Alappuzha', 'Kochi', 'Kozhikode', 'Thiruvananthapuram'],
+            'Ladakh': ['Kargil', 'Leh'],
+            'Lakshadweep': ['Kavaratti'],
+            'Madhya Pradesh': ['Bhopal', 'Gwalior', 'Indore', 'Jabalpur', 'Ujjain'],
+            'Maharashtra': ['Aurangabad', 'Mumbai', 'Nagpur', 'Nashik', 'Pune'],
+            'Manipur': ['Imphal'],
+            'Meghalaya': ['Shillong'],
+            'Mizoram': ['Aizawl'],
+            'Nagaland': ['Dimapur', 'Kohima'],
+            'Odisha': ['Bhubaneswar', 'Cuttack', 'Puri', 'Rourkela'],
+            'Puducherry': ['Karaikal', 'Mahe', 'Pondicherry', 'Yanam'],
+            'Punjab': ['Amritsar', 'Jalandhar', 'Ludhiana', 'Patiala'],
+            'Rajasthan': ['Ajmer', 'Jaipur', 'Jodhpur', 'Kota', 'Udaipur'],
+            'Sikkim': ['Gangtok'],
+            'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Salem', 'Tiruchirappalli'],
+            'Telangana': ['Hyderabad', 'Karimnagar', 'Nizamabad', 'Warangal'],
+            'Tripura': ['Agartala'],
+            'Uttar Pradesh': ['Agra', 'Allahabad', 'Kanpur', 'Lucknow', 'Varanasi'],
+            'Uttarakhand': ['Dehradun', 'Haridwar', 'Nainital', 'Rishikesh'],
+            'West Bengal': ['Asansol', 'Durgapur', 'Kolkata', 'Siliguri']
+
+
+        };
+
+
+        const places = {
+            'Agra': ['Taj Mahal', 'Agra Fort', 'Fatehpur Sikri', 'Mehtab Bagh'],
+            'Ahmedabad': ['Sabarmati Ashram', 'Akshardham Temple', 'Kankaria Lake', 'Sidi Saiyyed Mosque'],
+            'Ajmer': ['Ajmer Sharif Dargah', 'Ana Sagar Lake', 'Adhai Din Ka Jhonpra', 'Taragarh Fort'],
+            'Allahabad (Prayagraj)': ['Triveni Sangam', 'Anand Bhavan', 'Allahabad Fort', 'Khusro Bagh'],
+            'Amritsar': ['Golden Temple', 'Jallianwala Bagh', 'Wagah Border', 'Partition Museum'],
+            'Bangalore': ['Bangalore Palace', 'Lalbagh Botanical Garden', 'Cubbon Park', 'ISKCON Temple'],
+            'Bhopal': ['Bhojtal Lake', 'Sanchi Stupa', 'Van Vihar National Park', 'Taj-ul-Masjid'],
+            'Bhubaneswar': ['Lingaraj Temple', 'Udayagiri and Khandagiri Caves', 'Raja Rani Temple', 'Nandankanan Zoo', 'Dhauli Hill'],
+            'Chandigarh': ['Rock Garden', 'Sukhna Lake', 'Rose Garden', 'Pinjore Gardens'],
+            'Chennai': ['Marina Beach', 'Kapaleeshwarar Temple', 'Fort St. George', 'Santhome Basilica'],
+            'Coimbatore': ['Marudhamalai Temple', 'Dhyanalinga Temple', 'VOC Park and Zoo', 'Perur Pateeswarar Temple'],
+            'Delhi': ['Red Fort', 'India Gate', 'Qutub Minar', 'Lotus Temple', 'Humayun\'s Tomb'],
+            'Gaya': ['Mahabodhi Temple', 'Bodhi Tree', 'Vishnupad Temple', 'Dungeshwari Cave Temples'],
+            'Goa': ['Baga Beach', 'Basilica of Bom Jesus', 'Dudhsagar Waterfalls', 'Aguada Fort'],
+            'Guwahati': ['Kamakhya Temple', 'Umananda Temple', 'Assam State Zoo', 'Pobitora Wildlife Sanctuary'],
+            'Hyderabad': ['Charminar', 'Golconda Fort', 'Ramoji Film City', 'Hussain Sagar Lake'],
+            'Jaipur': ['Hawa Mahal', 'Amber Fort', 'City Palace', 'Jantar Mantar'],
+            'Jodhpur': ['Mehrangarh Fort', 'Umaid Bhawan Palace', 'Jaswant Thada', 'Mandore Garden'],
+            'Kolkata': ['Victoria Memorial', 'Howrah Bridge', 'Dakshineswar Kali Temple', 'Indian Museum'],
+            'Lucknow': ['Bara Imambara', 'Rumi Darwaza', 'Ambedkar Memorial Park', 'Chota Imambara'],
+            'Mumbai': ['Gateway of India', 'Marine Drive', 'Elephanta Caves', 'Siddhivinayak Temple', 'Chhatrapati Shivaji Maharaj Terminus'],
+            'Mysore': ['Mysore Palace', 'Brindavan Gardens', 'Chamundi Hill', 'St. Philomena\'s Church'],
+            'Pune': ['Shaniwar Wada', 'Aga Khan Palace', 'Sinhagad Fort', 'Pataleshwar Cave Temple'],
+            'Udaipur': ['City Palace', 'Lake Pichola', 'Jag Mandir', 'Fateh Sagar Lake'],
+            'Varanasi': ['Kashi Vishwanath Temple', 'Dashashwamedh Ghat', 'Manikarnika Ghat', 'Banaras Hindu University'],
+            'Vijayawada': ['Kanaka Durga Temple', 'Undavalli Caves', 'Prakasam Barrage', 'Bhavani Island'],
+            'Visakhapatnam': ['Ramakrishna Beach', 'Kailasagiri', 'INS Kursura Submarine Museum', 'Araku Valley']
+
+        };
+
+
+
+        function updateCities() {
+            const stateFilter = document.getElementById('stateFilter');
+            const cityFilter = document.getElementById('cityFilter');
+            const state = stateFilter.value;
+
+            cityFilter.innerHTML = '<option value="">Select City</option>';
+            if (cities[state]) {
+                cities[state].forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    cityFilter.appendChild(option);
+                });
+            }
+            updatePlaces();
+        }
+
+        function updatePlaces() {
+            const cityFilter = document.getElementById('cityFilter');
+            const placeFilter = document.getElementById('placeFilter');
+            const city = cityFilter.value;
+
+            placeFilter.innerHTML = '<option value="">Select Place</option>';
+            if (places[city]) {
+                places[city].forEach(place => {
+                    const option = document.createElement('option');
+                    option.value = place;
+                    option.textContent = place;
+                    placeFilter.appendChild(option);
+                });
+            }
+        }
+
+        function applyFilters() {
+            // Function to apply the selected filters to the displayed plans
+        }
+
+        function toggleMenu() {
+            const menuList = document.querySelector('.menu-list');
+            menuList.classList.toggle('active');
+        }
+
+        function toggleFilter() {
+            const filterSidebar = document.getElementById('filter-sidebar');
+            filterSidebar.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>

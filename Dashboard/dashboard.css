@@ -1,0 +1,417 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Button styles */
+button {
+    background-color: #007BFF; /* Bootstrap primary blue color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for top/bottom and left/right */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Font size for better readability */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #858585; /* Darker shade for hover effect */
+}
+
+/* Button container for spacing */
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center buttons */
+    gap: 15px; /* Add space between buttons */
+    margin: 20px 0; /* Add margin above and below */
+}
+
+/* Header Styling */
+.transparent-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.transparent-header:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-list li {
+    margin-left: 20px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: #f1c40f; /* Yellow color */
+}
+
+.menu-list li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #f1c40f; /* Yellow color */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.menu-list li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.menu-toggle:focus {
+    outline: none;
+}
+
+#signOutBtn {
+    background-color: #dc3545; /* Red for the sign-out button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#signOutBtn:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+/* Unified Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button.primary {
+    background-color: #f1c40f; /* Yellow */
+    color: black;
+}
+
+.button.primary:hover {
+    background-color: #e1b71d; /* Darker yellow */
+}
+
+.button.secondary {
+    background-color: #6c757d; /* Grey */
+    color: white;
+}
+
+.button.secondary:hover {
+    background-color: #5a6268; /* Darker grey */
+}
+
+.button.danger {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+.button.danger:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    margin-top: 70px;
+    padding: 40px;
+}
+
+/* Sidebar Styling */
+.filter-sidebar {
+    width: 270px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed;
+    top: 80px;
+    left: -300px;
+    transition: left 0.5s ease;
+}
+
+.filter-sidebar.show {
+    left: 20px;
+}
+
+.filter-sidebar h3 {
+    font-size: 1.4em;
+    color: #333;
+}
+
+.filter-sidebar select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.filter-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f1c40f; /* Yellow */
+    color: black;
+    padding: 25px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.filter-toggle:hover {
+    background-color: #e1b71d; /* Darker yellow */
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 300px;
+    padding: 40px;
+    transition: margin-left 0.5s ease;
+}
+
+.plans-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Plan Card */
+.plan-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card h3 {
+    font-size: 1.4em;
+    color: #333;
+}
+
+.plan-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.plan-card .buttons {
+    margin-top: 15px;
+}
+
+.buttons .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-connect {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+.btn-connect:hover {
+    background-color: #858585; /* Darker blue */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer .social-links {
+    margin-bottom: 10px;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: #ffcc00;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .filter-sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .filter-sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: -250px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        padding: 15px;
+    }
+
+    .menu-list.show {
+        width: 250px; /* Adjusted width for better fit */
+        right: 0;
+    }
+
+    .menu-list li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .filter-toggle {
+        bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .menu-list {
+        width: 100%;
+        right: -100%;
+    }
+
+    .menu-list.show {
+        right: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .plan-card {
+        padding: 15px;
+    }
+
+    .filter-toggle {
+        bottom: 20px;
+    }
+}

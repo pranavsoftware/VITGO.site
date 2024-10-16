@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Dashboard</title>
+  <link rel="icon" href="../assets/logo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="../Driver Webapp/Driver_hidden.css">
+  <link rel="manifest" href="../Driver Webapp/manifest.json">
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <img src="../assets/logo.jpeg" alt="Logo">
+      <h1>Driver Dashboard</h1>
+    </div>
+  </header>
+
+  <div id="login-container">
+    <h2>Driver Login</h2>
+    <button class="button" id="googleLoginBtn">Login with Google</button>
+  </div>
+
+  <div id="dashboard">
+    <h2>Welcome, <span id="driverName"></span></h2>
+    <img id="driverProfilePic" alt="Driver Profile Picture" />
+    <button id="logoutBtn" class="button">Logout</button>
+
+    <div id="booking-details">
+      <h3>Your Bookings</h3>
+      <div id="bookingDiv"></div>
+
+      <div id="driverDetailsContainer">
+        <!-- Driver details will be inserted here -->
+      </div>
+
+      <!-- Separate sections for Verify Driver and Payment -->
+      <section id="verify-section">
+        <h3>Verify Driver</h3>
+        <p>Driver Verification QR Code:</p>
+        <div class="qr-section">
+          <img id="verifyQR" src="" alt="Verification QR Code" onclick="saveQRCodeScan('verification')">
+        </div>
+        <div id="timerDisplay"></div>
+        <button id="generateQRCodeBtn">Generate New QR Code</button>
+
+
+      </section>
+
+      <section id="payment-section">
+        <h3>Payment</h3>
+        <p>Payment QR Code:</p>
+        <div class="qr-section">
+          <img id="paymentQR" src="" alt="Payment QR Code" onclick="saveQRCodeScan('payment')">
+        </div>
+        <div id="timerDisplay"></div>
+        <button id="generateQRCodeBtn">Generate New QR Code</button>
+
+
+      </section>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi" class="social-icon">Instagram</a> |
+      <a href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true" class="social-icon">LinkedIn</a>
+    </div>
+    <p>&copy; 2024 Easycab. All Rights Reserved.</p>
+  </footer>
+
+  <script type="module" src="../Driver Webapp/Driver.js"></script>
+</body>
+
+</html>
