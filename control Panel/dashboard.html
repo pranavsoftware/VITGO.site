@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control-Panel</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="../control Panel/dashboard.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">EasyCab</div>
+        <h1>Dashboard</h1>
+        <nav>
+            <li><a href="../control Panel/Planlist.html">Student-Plan</a></li>
+            <button id="signOutButton">Sign Out</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search users...">
+        </div>
+        <div class="dashboard">
+            <div id="loading-spinner" style="display: none;">Loading...</div>
+
+        <div id="userList" class="user-list">
+            <!-- User cards will be appended here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script type="module" src="../control Panel/dashboard.js"></script>
+</body>
+
+</html>

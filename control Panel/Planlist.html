@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Plan</title>
+    <link rel="stylesheet" href="../control Panel/Planlist.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/logo (1).png" alt="Company Logo">
+                <span>EasyCab</span>
+            </div>
+            <button class="go-back" onclick="history.back()">Go Back</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search plans...">
+        </div>
+        <div class="post-plan-container"></div>
+            <div id="loading-spinner" style="display: none;">Loading...</div>
+        
+        <div class="post-plan-container" id="userList">
+            <!-- Plans will be dynamically inserted here -->
+            <h2>Post Plan</h2>
+            <p>Details of various plans will be displayed here. You can search and filter plans using the search bar above.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script type="module" src="../control Panel/Planlist.js"></script>
+</body>
+
+</html>
