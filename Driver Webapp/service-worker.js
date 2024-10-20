@@ -4,9 +4,8 @@ const urlsToCache = [
     '../Driver Webapp/index.html',
     '../Driver Webapp/Driver_hidden.css',
     '../Driver Webapp/Driver.js',
-    '../assets/logo.jpeg',
-    'logo.jpeg',
-    'logo.jpeg',
+    '../assets/logo (1).png',
+    '../Driver Webapp/manifest.json',
     // Add more assets as needed
 ];
 
