@@ -1,7 +1,7 @@
 {
     "name": "Easycab - Parent",
     "short_name": "Easycab Parent",
-    "start_url": "../Parent - webapp/login.html",
+    "start_url": "../Parent - webapp/Index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#0000ff",
