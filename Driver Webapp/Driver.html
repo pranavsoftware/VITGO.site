@@ -29,32 +29,22 @@
     <img id="driverProfilePic" alt="Driver Profile Picture" />
     <button id="logoutBtn" class="button">Logout</button>
 
-      <!-- Separate sections for Verify Driver and Payment -->
-      <section id="verify-section">
-        <h3>Verify Driver</h3>
-        <p>Driver Verification QR Code:</p>
-        <div class="qr-section">
-          <img id="verifyQR" src="" alt="Verification QR Code" onclick="saveQRCodeScan('verification')">
-        </div>
-        <div id="timerDisplay"></div>
-        <button id="generateQRCodeBtn">Generate New QR Code</button>
+    <!-- Separate sections for Verify Driver and Payment -->
+    <section id="verify-section">
+      <h3>Verify Driver</h3>
+      <p>Driver Verification QR Code:</p>
+      <div class="qr-section">
+        <img id="verifyQR" src="" alt="Verification QR Code" onclick="saveQRCodeScan('verification')">
+      </div>
+      <h3>Payment</h3>
+      <p>Payment QR Code:</p>
+      <div class="qr-section">
+        <img id="paymentQR" src="" alt="Payment QR Code" onclick="saveQRCodeScan('payment')">
+      </div>
+      <div id="timerDisplay"></div>
+      <button id="generateQRCodeBtn">Generate New QR Code</button>
 
-
-      </section>
-
-      <section id="payment-section">
-        <h3>Payment</h3>
-        <p>Payment QR Code:</p>
-        <div class="qr-section">
-          <img id="paymentQR" src="" alt="Payment QR Code" onclick="saveQRCodeScan('payment')">
-        </div>
-        <div id="timerDisplay"></div>
-        <button id="generateQRCodeBtn">Generate New QR Code</button>
-
-
-      </section>
-
-    </div>
+  </div>
   </div>
 
   <footer>
