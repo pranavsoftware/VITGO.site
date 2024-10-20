@@ -1,6 +1,6 @@
 {
-    "name": "EasyCab Driver Dashboard",
-    "short_name": "EasyCab",
+    "name": "EasyDrive",
+    "short_name": "EasyDrive",
     "start_url": "../Driver Webapp/Driver.html",
     "display": "standalone",
     "background_color": "#ffffff",
