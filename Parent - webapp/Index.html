@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Login</title>
+    <link rel="stylesheet" href="../Parent - webapp/login_hidden.css">
+    <link rel="manifest" href="../Parent - webapp/manifest.json">
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <img src="../assets/logo (1).png" alt="Company Logo" class="logo">
+        <h1 class="company-name">Easycab - Parent Portal</h1>
+    </header>
+
+    <main class="login-container">
+        <h2>Parent Login</h2>
+        <form id="loginForm" class="login-form">
+            <label for="email">Child's Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="uid">Child's UID:</label>
+            <input type="text" id="uid" name="uid" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div id="errorPopup" class="error-popup">Incorrect UID. Please try again.</div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <!-- Firebase Scripts -->
+    <script type="module" src="login.js"></script>
+</body>
+</html>
