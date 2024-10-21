@@ -1,234 +1,209 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light background */
-    color: #333; /* Dark text color */
 }
 
-header {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white header for contrast */
-    color: #000;
-    padding: 20px;
-    text-align: center;
-    position: sticky; /* Keeps the header on top when scrolling */
-    z-index: 1000; /* Ensures header is above other content */
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    margin-right: 10px;
-}
-
-.logo h1 {
-    font-size: 24px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
 }
 
-h1 {
-    margin: 0;
-    font-size: 2rem; /* Increased font size for emphasis */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+/* Header styles */
+header {
+    background-color: #333; /* Changed to a professional blue */
+    color: white;
+    padding: 15px 20px; /* Added horizontal padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
-#username {
-    font-size: 1.2rem;
-    color: #000;
+header .logo {
+    height: 50px;
+    margin-right: 20px;
 }
 
-/* Button Styles */
-button {
-    background-color: #dc3545; /* Default button color */
-    color: #fbfafa; /* Off-white text */
-    padding: 10px 20px;
-    border: 2px solid transparent; /* Transparent border for button hover effect */
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
-    font-size: 1rem; /* Consistent font size for buttons */
+header h1 {
+    font-size: 1.8rem; /* Increased font size for better visibility */
+    font-weight: 600; /* Increased font weight for emphasis */
 }
 
-button#goBackBtn,
-button#signOutBtn {
-    border-color: #ffffff; /* White border */
+#user-section {
+    display: flex;
+    align-items: center;
 }
 
-button:hover {
-    background-color: #c82333; /* Darker red on hover */
-    border-color: #ffffff; /* Keep the border color */
+#user-section #username {
+    margin-right: 20px;
+    font-size: 1.1rem; /* Slightly increased font size */
 }
 
-button#viewDriverDetailsBtn {
-    background-color: #007bff; /* Primary button */
+#user-section li {
+    list-style-type: none;
 }
 
-button#viewDriverDetailsBtn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+#user-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px; /* Increased padding for buttons */
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
 }
 
-/* Main Content Styling */
+#user-section a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Main section styles */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background: white;
-    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow for depth */
-    transition: transform 0.3s; /* Scale effect on hover */
-}
-
-section:hover {
-    transform: translateY(-3px); /* Lift effect on hover */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
 }
 
 h2 {
-    font-size: 1.6rem;
-    color: #333; /* Consistent heading color */
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem; /* Consistent header size */
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
+    color: #555; /* Darker label color for better visibility */
 }
 
 input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
+    padding: 12px; /* Increased padding for input fields */
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
-    background-color: #fafafa;
-    transition: border-color 0.3s;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s; /* Added transition for input fields */
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #007bff; /* Blue border on focus */
+    border-color: #007BFF; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
 }
 
-/* QR Code Scanner and Animation */
-#scanner {
-    text-align: center;
-}
-
-#scan-result {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    padding: 10px;
-    background-color: #ffffff; /* White background */
-    color: rgb(0, 0, 0);
+button {
+    padding: 12px; /* Increased padding for buttons */
+    border: none;
+    background-color: #007BFF; /* Match the header color */
+    color: white;
+    font-size: 1rem;
     border-radius: 5px;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333; /* Dark footer */
-    color: white;
-    position: relative;
+/* QR code scanner section */
+#reader {
+    margin: 20px 0;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-.social-links {
-    margin-top: 10px;
-}
-
-.social-link {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-.social-link:hover {
-    text-decoration: underline;
-    color: #dc3545; /* Change color on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 900px) {
-    header {
-        padding: 10px; /* Reduced padding for smaller screens */
-    }
-
-    h1 {
-        font-size: 1.8rem; /* Smaller heading on mobile */
-    }
-
-    .logo img {
-        width: 40px; /* Reduced logo size */
-    }
-
-    button {
-        width: 100%; /* Full-width buttons on mobile */
-        margin-bottom: 10px; /* Spacing between buttons */
-    }
-
-    section {
-        padding: 15px; /* Reduced padding for sections */
-    }
-}
-
-@media (max-width: 600px) {
+/* Responsive styles */
+@media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: center; /* Center align items on mobile */
+        align-items: flex-start;
     }
 
-    .header-content {
-        flex-direction: column; /* Stack header content vertically */
-        align-items: center;
+    header h1 {
+        font-size: 1.5rem; /* Adjusted size for mobile */
+        margin: 10px 0;
     }
 
-    h1 {
-        font-size: 1.5rem; /* Smaller heading for small devices */
+    #user-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #user-section a {
+        margin-top: 5px;
+    }
+
+    main {
+        padding: 15px; /* Adjusted padding for mobile */
     }
 
     input, select, textarea {
-        font-size: 14px; /* Smaller font size for inputs */
-    }
-
-    section {
-        padding: 10px; /* Further reduced section padding */
+        font-size: 0.9rem; /* Adjusted font size for mobile */
     }
 
     button {
-        width: 100%; /* Full-width buttons on mobile */
+        font-size: 0.9rem; /* Adjusted font size for mobile */
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Match the header color */
+    color: white;
+    text-align: center;
+    padding: 15px 20px; /* Added horizontal padding for consistency */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer .social-links {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdd57; /* Change link color on hover */
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive styles for footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Adjusted font size for mobile */
     }
 }
