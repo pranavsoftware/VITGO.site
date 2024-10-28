@@ -1,88 +1,145 @@
-/* Basic styling for the login page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background: #333; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px 20px; /* Reduced padding for smaller header */
+}
+
+.logo {
+    max-width: 100px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+/* Company name styling */
+h1 {
+    font-size: 24px; /* Adjusted font size for the company name */
+    margin: 0; /* Remove default margin */
+}
+
+/* Main styling */
+main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-
-header .logo {
-    width: 50px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px); /* Center vertically */
+    padding: 20px;
 }
 
 form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    max-width: 400px; /* Maintain maximum width */
+    margin: auto;
 }
 
-form input {
-    margin-bottom: 10px;
-    padding: 10px;
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #b35100;
+    outline: none;
+}
+
+button {
+    background: #55616e; /* Button background color */
+    color: #ffffff; /* White text */
+    padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    width: 100%;
 }
 
-form button:hover {
-    background-color: #45a049;
+button:hover {
+    background: #707880; /* Darker color on hover */
 }
 
+/* Popup message */
 .popup-message {
-    margin-top: 10px;
-    color: red;
-    font-size: 14px;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+    display: none; /* Initially hidden */
     margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #0056b3;
+    background: #e7f1ff;
+    color: #000000;
+    border-radius: 4px;
 }
 
-footer .social-links a {
-    color: white;
+/* Footer styling */
+footer {
+    background: #333; /* Dark background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links a {
+    color: #ffffff; /* White text */
     margin: 0 10px;
     text-decoration: none;
 }
 
-footer .social-links a:hover {
-    text-decoration: underline;
+.social-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 80px; /* Further decrease logo size on mobile */
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    form {
+        padding: 15px; /* Less padding for smaller screens */
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        padding: 12px; /* Smaller padding for inputs and button */
+        font-size: 14px; /* Slightly smaller font size */
+    }
+
+    button {
+        margin-top: 10px; /* Add margin for better spacing */
+    }
 }
