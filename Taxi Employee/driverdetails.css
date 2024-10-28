@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body and Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Dark background for header */
+    color: white; /* White text for contrast */
+    padding: 15px 20px;
+}
+
+#logo {
+    height: 60px; /* Adjust logo size */
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5em; /* Larger font for the company name */
+}
+
+button {
+    background-color: #f44336; /* Red button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em; /* Consistent button text size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Main Container */
+main {
+    padding: 20px; /* Padding around the main content */
+}
+
+.container {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center container with automatic side margins */
+    background: white; /* White background for the driver details */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the container */
+}
+
+/* Driver Details Styling */
+.driver {
+    margin-bottom: 20px; /* Space between driver entries */
+    border-bottom: 1px solid #ddd; /* Light border to separate entries */
+    padding-bottom: 15px; /* Padding below each driver entry */
+}
+
+.driver img {
+    width: 100px; /* Set a fixed width for driver profile pictures */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular images */
+    margin-right: 15px; /* Space between image and text */
+    float: left; /* Align image to the left */
+}
+
+.driver h2 {
+    margin: 0 0 10px; /* Space below the name */
+    font-size: 1.3em; /* Font size for driver name */
+}
+
+.driver p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Center text in footer */
+    padding: 20px; /* Padding around footer */
+    background-color: #333; /* Dark footer background */
+    color: white; /* White text for contrast */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links {
+    margin-bottom: 10px; /* Space below social links */
+}
+
+.social-links a {
+    margin: 0 10px; /* Space between social links */
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-links a:hover {
+    color: #f44336; /* Change color on hover */
+}

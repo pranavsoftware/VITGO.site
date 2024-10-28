@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="../Taxi Employee/add emp hidden.css">
+    <script type="module" src="../Taxi Employee/+ADDEmployee.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="../assets/logo (1).png" alt="Company Logo" class="logo">
+        <h1>EasyCab Employee Registration</h1>
+        <a href="../Taxi Employee/index.html" class="back-button">Go Back</a>
+    </header>
+
+    <main>
+        <form id="employeeForm">
+            <input type="text" id="name" placeholder="Name" autocomplete="name" required>
+            <input type="email" id="email" placeholder="Email ID" autocomplete="email" readonly required>
+            <input type="password" id="password" placeholder="Password" autocomplete="new-password" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="licenceNumber" placeholder="Licence Number" maxlength="12" required pattern="\d{12}" required>
+            <input type="file" id="profilePic" accept="image/*" required>
+            <button type="submit">Register</button>
+        </form>
+        <div id="popupMessage" class="popup-message"></div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2024 EasyCab. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
