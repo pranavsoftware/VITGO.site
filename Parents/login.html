@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="manifest" href="../Parents/manifest.json">
 
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -22,7 +24,8 @@
     <!-- Main Content -->
     <main>
         <div class="notice">
-            <p><strong>Notice:</strong> you encounter any issues, please reach out to us at <a href="mailto:easycab.site@gmail.com">easycab.site@gmail.com</a>. We're here to help!</p>
+            <p><strong>Notice:</strong> you encounter any issues, please reach out to us at <a
+                    href="mailto:easycab.site@gmail.com">easycab.site@gmail.com</a>. We're here to help!</p>
         </div>
         <!-- Toggle Buttons -->
         <div class="form-toggle">
@@ -33,16 +36,14 @@
         <!-- Login Form -->
         <section id="login-section" class="form-section active">
             <h2>Parent Login</h2>
-                    
+
             <form id="loginForm">
-                <label for="loginEmail">Email ID:</label>
-                <input type="email" id="loginEmail" required>
-                
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" required autocomplete="current-password">
-                
+                <input type="text" id="childUID" placeholder="Enter Child UID" required />
+                <input type="email" id="loginEmail" placeholder="Email" required />
+                <input type="password" id="loginPassword" placeholder="Password" required />
                 <button type="submit">Login</button>
             </form>
+
         </section>
 
         <!-- Registration Form -->
@@ -88,4 +89,5 @@
     <!-- Firebase and JavaScript -->
     <script src="../Parents/login.js" type="module"></script>
 </body>
+
 </html>
