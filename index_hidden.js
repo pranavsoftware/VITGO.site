@@ -1,1 +1,79 @@
-const _0x57dda2=_0x4ff2;(function(_0x5428e3,_0x2eaa12){const _0x52beae=_0x4ff2,_0x1c7dfa=_0x5428e3();while(!![]){try{const _0x2d271e=parseInt(_0x52beae(0x8f))/0x1*(-parseInt(_0x52beae(0x82))/0x2)+-parseInt(_0x52beae(0x81))/0x3+parseInt(_0x52beae(0x7e))/0x4*(parseInt(_0x52beae(0x89))/0x5)+-parseInt(_0x52beae(0x9f))/0x6*(-parseInt(_0x52beae(0x9c))/0x7)+-parseInt(_0x52beae(0x92))/0x8+-parseInt(_0x52beae(0x90))/0x9+parseInt(_0x52beae(0x95))/0xa;if(_0x2d271e===_0x2eaa12)break;else _0x1c7dfa['push'](_0x1c7dfa['shift']());}catch(_0x54b627){_0x1c7dfa['push'](_0x1c7dfa['shift']());}}}(_0x3ea5,0xd1287));function _0x4ff2(_0x43e66a,_0x3b0aba){const _0x3ea567=_0x3ea5();return _0x4ff2=function(_0x4ff25b,_0x4e75eb){_0x4ff25b=_0x4ff25b-0x7c;let _0x39ed45=_0x3ea567[_0x4ff25b];return _0x39ed45;},_0x4ff2(_0x43e66a,_0x3b0aba);}function toggleMenu(){const _0x56b7a5=_0x4ff2,_0xe0f844=document['querySelector'](_0x56b7a5(0x96)),_0x47f431=document[_0x56b7a5(0x99)](_0x56b7a5(0x93));_0x47f431['classList'][_0x56b7a5(0xa0)](_0x56b7a5(0x8e)),_0xe0f844[_0x56b7a5(0x7d)][_0x56b7a5(0xa0)](_0x56b7a5(0x88)),_0xe0f844['classList'][_0x56b7a5(0x8b)](_0x56b7a5(0x88))?(_0xe0f844['style'][_0x56b7a5(0x8c)]='flex',setTimeout(()=>{const _0x5a09ea=_0x56b7a5;_0xe0f844['style'][_0x5a09ea(0x97)]='1',_0xe0f844[_0x5a09ea(0x86)][_0x5a09ea(0x98)]=_0x5a09ea(0x91);},0x0)):(_0xe0f844[_0x56b7a5(0x86)][_0x56b7a5(0x97)]='0',_0xe0f844[_0x56b7a5(0x86)][_0x56b7a5(0x98)]=_0x56b7a5(0xa3),setTimeout(()=>{const _0xe1db4b=_0x56b7a5;_0xe0f844[_0xe1db4b(0x86)][_0xe1db4b(0x8c)]=_0xe1db4b(0x85);},0x12c));}let currentReview=0x0;function changeReview(_0x4181c6){const _0x2b2a98=_0x4ff2,_0x3cfea8=document[_0x2b2a98(0x94)](_0x2b2a98(0x84));_0x3cfea8[currentReview][_0x2b2a98(0x7d)][_0x2b2a98(0x8a)](_0x2b2a98(0x88)),currentReview=(currentReview+_0x4181c6+_0x3cfea8[_0x2b2a98(0x8d)])%_0x3cfea8[_0x2b2a98(0x8d)],_0x3cfea8[currentReview]['classList'][_0x2b2a98(0x83)]('active');}function autoChangeReview(){setInterval(()=>{changeReview(0x1);},0xbb8);}document['addEventListener'](_0x57dda2(0xa2),()=>{const _0x35a844=_0x57dda2,_0x84183=document[_0x35a844(0x99)](_0x35a844(0x9e)),_0x3c84c8=document['querySelector'](_0x35a844(0x96));_0x84183[_0x35a844(0x80)]('click',toggleMenu),document[_0x35a844(0x80)](_0x35a844(0x87),function(_0x489433){const _0x5198aa=_0x35a844;!_0x84183[_0x5198aa(0x8b)](_0x489433['target'])&&!_0x3c84c8[_0x5198aa(0x8b)](_0x489433['target'])&&(_0x3c84c8[_0x5198aa(0x7d)][_0x5198aa(0x8a)](_0x5198aa(0x88)),header[_0x5198aa(0x7d)]['remove'](_0x5198aa(0x8e)),_0x3c84c8[_0x5198aa(0x86)][_0x5198aa(0x97)]='0',_0x3c84c8[_0x5198aa(0x86)]['transform']=_0x5198aa(0xa3),setTimeout(()=>{const _0x2ccb39=_0x5198aa;_0x3c84c8[_0x2ccb39(0x86)]['display']='none';},0x12c));}),autoChangeReview();});function _0x3ea5(){const _0x3d08a9=['menu-open','241EQoDBT','13926618isKmym','translateX(0)','6289816tYtkqh','.transparent-header','querySelectorAll','30648990QWqRFG','.menu-list','opacity','transform','querySelector','scope','error','7065947YRRJQL','catch','.menu-toggle','6VknqZl','toggle','register','DOMContentLoaded','translateX(100%)','Service\x20Worker\x20registered\x20with\x20scope:','classList','406228zLiCcL','service-worker.js','addEventListener','4229661kIXkPD','2378fPQPOb','add','.review','none','style','click','active','40nELUHn','remove','contains','display','length'];_0x3ea5=function(){return _0x3d08a9;};return _0x3ea5();}'serviceWorker'in navigator&&window[_0x57dda2(0x80)]('load',()=>{const _0x2a6690=_0x57dda2;navigator['serviceWorker'][_0x2a6690(0xa1)](_0x2a6690(0x7f))['then'](_0x586494=>{const _0x5aec4f=_0x2a6690;console['log'](_0x5aec4f(0x7c),_0x586494[_0x5aec4f(0x9a)]);})[_0x2a6690(0x9d)](_0x32bcc3=>{const _0x5c97cf=_0x2a6690;console[_0x5c97cf(0x9b)]('Service\x20Worker\x20registration\x20failed:',_0x32bcc3);});});
+// Function to toggle the mobile menu
+function toggleMenu() {
+    const menuList = document.querySelector('.menu-list');
+    const header = document.querySelector('.transparent-header');
+
+    // Toggle the 'menu-open' class
+    header.classList.toggle('menu-open');
+    menuList.classList.toggle('active');
+
+    // Open the menu
+    if (menuList.classList.contains('active')) {
+        menuList.style.display = 'flex';
+        setTimeout(() => {
+            menuList.style.opacity = '1';
+            menuList.style.transform = 'translateX(0)';
+        }, 0);
+    } else {
+        // Close the menu
+        menuList.style.opacity = '0';
+        menuList.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            menuList.style.display = 'none';
+        }, 300); // Match this timeout with the CSS transition duration
+    }
+}
+
+// Manage review functionality
+let currentReview = 0;
+
+// Function to change reviews
+function changeReview(direction) {
+    const reviews = document.querySelectorAll('.review');
+    reviews[currentReview].classList.remove('active'); // Hide the current review
+    currentReview = (currentReview + direction + reviews.length) % reviews.length; // Update index
+    reviews[currentReview].classList.add('active'); // Show the new review
+}
+
+// Function to automatically change reviews every 3 seconds
+function autoChangeReview() {
+    setInterval(() => {
+        changeReview(1); // Automatically move to the next review
+    }, 3000); // 3000 ms = 3 seconds
+}
+
+// Event listeners for document ready to ensure everything is set up correctly
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuList = document.querySelector('.menu-list');
+
+    // Toggle menu on click
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Optional: Close the menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !menuList.contains(event.target)) {
+            menuList.classList.remove('active');
+            header.classList.remove('menu-open');
+            menuList.style.opacity = '0';
+            menuList.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                menuList.style.display = 'none';
+            }, 300);
+        }
+    });
+
+    // Automatically start changing reviews every 3 seconds
+    autoChangeReview();
+});
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../service-worker.js')
+    .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch((error) => {
+        console.log('Service Worker registration failed:', error);
+    });
+}
+
