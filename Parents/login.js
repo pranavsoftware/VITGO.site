@@ -53,15 +53,34 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
+    const childUID = document.getElementById("childUID").value; // Add child UID input for login
 
     try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        showNotification("Login successful!");
-        window.location.href = "../Parents/dashboard.html";
+        // Retrieve the parentEmail from Firestore using childUID
+        const uidDoc = doc(db, "usersParent", childUID);
+        const uidSnapshot = await getDoc(uidDoc);
+
+        if (uidSnapshot.exists()) {
+            const userData = uidSnapshot.data();
+            const storedEmail = userData.parentEmail;
+
+            // Check if the provided email matches the stored email
+            if (storedEmail === email) {
+                // If emails match, proceed with authentication
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                showNotification("Login successful!");
+                window.location.href = "../Parents/dashboard.html";
+            } else {
+                showNotification("Login failed: Email does not match the registered account.");
+            }
+        } else {
+            showNotification("Login failed: No user found with the provided Child UID.");
+        }
     } catch (error) {
         showNotification("Login failed: " + error.message);
     }
 });
+
 
 // Registration Form Submission
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
@@ -107,10 +126,10 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('../Parents/service-worker.js')
-      .then((registration) => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch((error) => {
-        console.log('Service Worker registration failed:', error);
-      });
-  }
+        .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+        });
+}
