@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, where, orderBy, limit, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, query, where, orderBy, limit, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
 // Firebase configuration
@@ -23,13 +23,9 @@ async function displayChildDetails() {
     if (user) {
         const parentQuery = query(collection(db, 'usersParent'), where("parentEmail", "==", user.email));
         const parentSnapshot = await getDocs(parentQuery);
-        let childUID = null;
-
-        // Get the child's UID based on the logged-in parent's email
         if (!parentSnapshot.empty) {
             const parentDoc = parentSnapshot.docs[0].data();
-            childUID = parentDoc.childUID;
-
+            const childUID = parentDoc.childUID;
             const childDocRef = doc(db, 'users', childUID);
             const childDoc = await getDoc(childDocRef);
             if (childDoc.exists()) {
@@ -55,6 +51,7 @@ async function displayChildDetails() {
 // Function to handle booking form submission
 document.getElementById("bookingForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const bookingData = {
         from: e.target.from.value,
         to: e.target.to.value,
@@ -84,6 +81,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
 
                 console.log("Booking saved successfully!");
                 e.target.reset();
+                showSuccessPopup(); // Show pop-up animation
                 displayLatestBooking(); // Call to display latest booking
             } else {
                 console.log("Parent document not found for parent email:", user.email);
@@ -99,35 +97,66 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
 
 // Function to display the latest booking
 async function displayLatestBooking() {
-    const bookingsRef = collection(db, "bookings");
-    const latestBookingQuery = query(bookingsRef, orderBy("timestamp", "desc"), limit(1));
-    const latestSnapshot = await getDocs(latestBookingQuery);
+    const user = auth.currentUser;
+    if (!user) {
+        console.error("User is not authenticated.");
+        return;
+    }
 
-    if (!latestSnapshot.empty) {
-        const booking = latestSnapshot.docs[0].data();
-        const bookingId = latestSnapshot.docs[0].id; // Get the document ID
+    const bookingsRef = collection(db, "bookings");
+    const latestBookingQuery = query(
+        bookingsRef,
+        where("userId", "==", user.uid),
+        orderBy("timestamp", "desc"),
+        limit(1)
+    );
+
+    try {
+        const latestSnapshot = await getDocs(latestBookingQuery);
         const bookingDiv = document.getElementById("bookingDetails");
 
-        bookingDiv.innerHTML = `
-            <p><strong>Booking ID:</strong> ${bookingId}</p>
-            <p><strong>From:</strong> ${booking.from}</p>
-            <p><strong>To:</strong> ${booking.to}</p>
-            <p><strong>Date:</strong> ${booking.date}</p>
-            <p><strong>Time:</strong> ${booking.time}</p>
-            <p><strong>Car:</strong> ${booking.car}</p>
-            <p><strong>Number of Students:</strong> ${booking.noOfStudents}</p>
-            <p><strong>Payment Mode:</strong> ${booking.paymentMode}</p>
-            <p><strong>Message:</strong> ${booking.message}</p>
-        `;
-    } else {
-        document.getElementById("bookingDetails").innerHTML = "<p>No bookings available.</p>";
+        if (!latestSnapshot.empty) {
+            const booking = latestSnapshot.docs[0].data();
+            const bookingId = latestSnapshot.docs[0].id;
+
+            bookingDiv.innerHTML = `
+                <p><strong>Booking ID:</strong> ${bookingId}</p>
+                <p><strong>From:</strong> ${booking.from}</p>
+                <p><strong>To:</strong> ${booking.to}</p>
+                <p><strong>Date:</strong> ${booking.date}</p>
+                <p><strong>Time:</strong> ${booking.time}</p>
+                <p><strong>Car:</strong> ${booking.car}</p>
+                <p><strong>Number of Students:</strong> ${booking.noOfStudents}</p>
+                <p><strong>Payment Mode:</strong> ${booking.paymentMode}</p>
+                <p><strong>Message:</strong> ${booking.message}</p>
+            `;
+        } else {
+            bookingDiv.innerHTML = "<p>No bookings available.</p>";
+        }
+    } catch (error) {
+        if (error.code === 'failed-precondition') {
+            console.error("Query requires an index that is still building. Please check Firestore console.");
+            alert("Your latest booking cannot be displayed yet. Please try again later.");
+        } else {
+            console.error("Error fetching latest booking:", error);
+        }
     }
 }
 
-// Call the function to display the latest booking when the user is logged in
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        displayLatestBooking();
-    }
-});
+// Function to show a success pop-up animation
+function showSuccessPopup() {
+    const popup = document.createElement("div");
+    popup.className = "success-popup";
+    popup.textContent = "Booking successful!";
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.classList.add("visible");
+    }, 100);
+
+    setTimeout(() => {
+        popup.classList.remove("visible");
+        setTimeout(() => document.body.removeChild(popup), 500);
+    }, 3000);
+}
 
