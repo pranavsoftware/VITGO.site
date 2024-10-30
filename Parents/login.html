@@ -10,11 +10,11 @@
     <link rel="apple-touch-icon" sizes="60x60" href="../assets/apple-touch-icon-ipad-76x76.png">
     <link rel="apple-touch-icon" sizes="114x114" href="../assets/apple-touch-icon-iphone-retina-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="../assets/apple-touch-icon-ipad-retina-152x152.png">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Parent Login and Registration</title>
     <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../Parents/login_hidden.css">
     <link rel="manifest" href="../Parents/manifest.json">
-
 </head>
 
 <body>
@@ -30,8 +30,7 @@
     <!-- Main Content -->
     <main>
         <div class="notice">
-            <p><strong>Notice:</strong> you encounter any issues, please reach out to us at <a
-                    href="mailto:easycab.site@gmail.com">easycab.site@gmail.com</a>. We're here to help!</p>
+            <p><strong>Notice:</strong> If you encounter any issues, please reach out to us at <a href="mailto:easycab.site@gmail.com">easycab.site@gmail.com</a>. We're here to help!</p>
         </div>
         <!-- Toggle Buttons -->
         <div class="form-toggle">
@@ -42,14 +41,12 @@
         <!-- Login Form -->
         <section id="login-section" class="form-section active">
             <h2>Parent Login</h2>
-
             <form id="loginForm">
                 <input type="text" id="childUID" placeholder="Enter Child UID" required />
-                <input type="email" id="loginEmail" placeholder="Email" required />
-                <input type="password" id="loginPassword" placeholder="Password" required />
+                <input type="email" id="loginEmail" placeholder="Email" required autocomplete="username" />
+                <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password" />
                 <button type="submit">Login</button>
             </form>
-
         </section>
 
         <!-- Registration Form -->
@@ -57,19 +54,19 @@
             <h2>Parent Registration</h2>
             <form id="registerForm">
                 <label for="parentName">Parent Name:</label>
-                <input type="text" id="parentName" required>
+                <input type="text" id="parentName" placeholder="Enter your name" required />
 
                 <label for="parentPhone">Parent Phone Number:</label>
-                <input type="tel" id="parentPhone" required>
+                <input type="tel" id="parentPhone" placeholder="Enter your phone number" required />
 
                 <label for="parentEmail">Parent Email ID:</label>
-                <input type="email" id="parentEmail" required>
+                <input type="email" id="parentEmail" placeholder="Enter your email" required autocomplete="username" />
 
                 <label for="parentPassword">Password:</label>
-                <input type="password" id="parentPassword" required autocomplete="new-password">
+                <input type="password" id="parentPassword" placeholder="Create a password" required autocomplete="new-password" />
 
-                <label for="childUID">Child UID:</label>
-                <input type="text" id="childUID" required>
+                <label for="childUIDRegister">Child UID:</label>
+                <input type="text" id="childUIDRegister" placeholder="Enter Child UID" required />
 
                 <button type="submit">Register</button>
             </form>
