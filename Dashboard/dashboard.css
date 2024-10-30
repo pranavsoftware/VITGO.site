@@ -25,28 +25,27 @@ body {
 
 /* Button styles */
 button {
-    background-color: #007BFF; /* Bootstrap primary blue color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding for top/bottom and left/right */
-    border: none; /* Remove border */
-    border-radius: 20px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-    font-size: 16px; /* Font size for better readability */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover effect */
 button:hover {
-    background-color: #858585; /* Darker shade for hover effect */
+    background-color: #858585;
 }
 
-/* Button container for spacing */
 .button-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center buttons */
-    gap: 15px; /* Add space between buttons */
-    margin: 20px 0; /* Add margin above and below */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 /* Header Styling */
@@ -83,6 +82,7 @@ button:hover {
     transform: scale(1.1);
 }
 
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -107,14 +107,14 @@ button:hover {
 }
 
 .menu-list li a:hover {
-    color: #f1c40f; /* Yellow color */
+    color: #f1c40f;
 }
 
 .menu-list li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background-color: #f1c40f; /* Yellow color */
+    background-color: #f1c40f;
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -125,6 +125,7 @@ button:hover {
     width: 100%;
 }
 
+/* Menu Toggle Button for Mobile */
 .menu-toggle {
     display: none;
     font-size: 2em;
@@ -138,8 +139,14 @@ button:hover {
     outline: none;
 }
 
+.menu-toggle.active .menu-list {
+    display: block;
+    right: 0;
+}
+
+/* Sidebar Filter Button */
 #signOutBtn {
-    background-color: #dc3545; /* Red for the sign-out button */
+    background-color: #dc3545;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -149,10 +156,9 @@ button:hover {
 }
 
 #signOutBtn:hover {
-    background-color: #c82333; /* Darker red */
+    background-color: #c82333;
 }
 
-/* Unified Button Styling */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -166,37 +172,38 @@ button:hover {
 }
 
 .button.primary {
-    background-color: #f1c40f; /* Yellow */
+    background-color: #f1c40f;
     color: black;
 }
 
 .button.primary:hover {
-    background-color: #e1b71d; /* Darker yellow */
+    background-color: #e1b71d;
 }
 
 .button.secondary {
-    background-color: #6c757d; /* Grey */
+    background-color: #6c757d;
     color: white;
 }
 
 .button.secondary:hover {
-    background-color: #5a6268; /* Darker grey */
+    background-color: #5a6268;
 }
 
 .button.danger {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
     color: white;
 }
 
 .button.danger:hover {
-    background-color: #c82333; /* Darker red */
+    background-color: #c82333;
 }
 
 /* Dashboard Layout */
 .dashboard {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 70px;
-    padding: 40px;
+    padding: 20px;
 }
 
 /* Sidebar Styling */
@@ -233,7 +240,7 @@ button:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #f1c40f; /* Yellow */
+    background-color: #f1c40f;
     color: black;
     padding: 25px;
     border: none;
@@ -244,7 +251,7 @@ button:hover {
 }
 
 .filter-toggle:hover {
-    background-color: #e1b71d; /* Darker yellow */
+    background-color: #e1b71d;
     transform: scale(1.1);
 }
 
@@ -301,23 +308,24 @@ button:hover {
 }
 
 .btn-connect {
-    background-color: #007bff; /* Blue */
+    background-color: #007bff;
     color: white;
 }
 
 .btn-connect:hover {
-    background-color: #858585; /* Darker blue */
+    background-color: #858585;
 }
 
 .btn-delete {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
     color: white;
 }
 
 .btn-delete:hover {
-    background-color: #c82333; /* Darker red */
+    background-color: #c82333;
 }
 
+/* Footer Styling */
 footer {
     background-color: #1a1a1a;
     color: #fff;
@@ -348,11 +356,52 @@ footer p {
     color: #ccc;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-    .filter-sidebar {
+    .transparent-header {
+        position: relative;
+        padding: 10px;
+    }
+
+    .logo {
         width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        transition: right 0.3s ease;
+        padding: 20px;
+    }
+
+    .menu-list.show {
+        right: 0;
+    }
+
+    /* Add spacing between menu items */
+    .menu-list li {
+        margin-bottom: 15px;
+        /* Increase or adjust as desired */
+    }
+
+    .filter-sidebar {
+        position: fixed;
+        width: 100%;
+        top: 0;
         left: -100%;
+        height: 100%;
+        background-color: #ffffff;
+        transition: left 0.3s ease;
     }
 
     .filter-sidebar.show {
@@ -361,57 +410,6 @@ footer p {
 
     .main-content {
         margin-left: 0;
-    }
-
-    .menu-list {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
-        right: -250px;
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
-        padding: 15px;
-    }
-
-    .menu-list.show {
-        width: 250px; /* Adjusted width for better fit */
-        right: 0;
-    }
-
-    .menu-list li {
-        margin: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .filter-toggle {
-        bottom: 30px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .menu-list {
-        width: 100%;
-        right: -100%;
-    }
-
-    .menu-list.show {
-        right: 0;
-    }
-
-    .main-content {
         padding: 20px;
-    }
-
-    .plan-card {
-        padding: 15px;
-    }
-
-    .filter-toggle {
-        bottom: 20px;
     }
 }
