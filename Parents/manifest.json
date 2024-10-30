@@ -1,0 +1,22 @@
+{
+    "name": "Easycab Parent",
+    "short_name": "Easycab Parent",
+    "description": "EasyCab Parent is an Web-App that lets parents book safe rides for their kids, track the journey, and view booking history—all in one place.",
+    "start_url": "../Parents/login.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007BFF",
+    "icons": [
+      {
+        "src": "../assets/logo (1).png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "../assets/logo (1).png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

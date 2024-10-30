@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Login and Registration</title>
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Parents/login_hidden.css">
+    <link rel="manifest" href="../Parents/manifest.json">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="../assets/logo (1).png" alt="Company Logo" class="logo">
+            <h1>EasyCab - Parent Portal</h1>
+            <a href="../Main Login/index.html" class="back-button">Go Back</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="notice">
+            <p><strong>Notice:</strong> you encounter any issues, please reach out to us at <a href="mailto:easycab.site@gmail.com">easycab.site@gmail.com</a>. We're here to help!</p>
+        </div>
+        <!-- Toggle Buttons -->
+        <div class="form-toggle">
+            <button id="showLogin" class="active">Login</button>
+            <button id="showRegister">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <section id="login-section" class="form-section active">
+            <h2>Parent Login</h2>
+                    
+            <form id="loginForm">
+                <label for="loginEmail">Email ID:</label>
+                <input type="email" id="loginEmail" required>
+                
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required autocomplete="current-password">
+                
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="registration-section" class="form-section">
+            <h2>Parent Registration</h2>
+            <form id="registerForm">
+                <label for="parentName">Parent Name:</label>
+                <input type="text" id="parentName" required>
+
+                <label for="parentPhone">Parent Phone Number:</label>
+                <input type="tel" id="parentPhone" required>
+
+                <label for="parentEmail">Parent Email ID:</label>
+                <input type="email" id="parentEmail" required>
+
+                <label for="parentPassword">Password:</label>
+                <input type="password" id="parentPassword" required autocomplete="new-password">
+
+                <label for="childUID">Child UID:</label>
+                <input type="text" id="childUID" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pop-Up Notification -->
+    <div id="notification" class="notification hidden">
+        <span id="notification-message"></span>
+        <button id="close-notification">Close</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 EasyCab. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase and JavaScript -->
+    <script src="../Parents/login.js" type="module"></script>
+</body>
+</html>
