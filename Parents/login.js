@@ -53,10 +53,9 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
-    const childUID = document.getElementById("childUID").value; // Add child UID input for login
+    const childUID = document.getElementById("childUID").value;
 
     try {
-        // Retrieve the parentEmail from Firestore using childUID
         const uidDoc = doc(db, "usersParent", childUID);
         const uidSnapshot = await getDoc(uidDoc);
 
@@ -64,10 +63,8 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
             const userData = uidSnapshot.data();
             const storedEmail = userData.parentEmail;
 
-            // Check if the provided email matches the stored email
             if (storedEmail === email) {
-                // If emails match, proceed with authentication
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                await signInWithEmailAndPassword(auth, email, password);
                 showNotification("Login successful!");
                 window.location.href = "../Parents/dashboard.html";
             } else {
@@ -81,7 +78,6 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     }
 });
 
-
 // Registration Form Submission
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -89,37 +85,39 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     const parentPhone = document.getElementById("parentPhone").value;
     const parentEmail = document.getElementById("parentEmail").value;
     const parentPassword = document.getElementById("parentPassword").value;
-    const childUID = document.getElementById("childUID").value;
+    const childUID = document.getElementById("childUIDRegister").value;
 
     // Disable button to prevent multiple submissions
     const registerButton = e.target.querySelector("button[type='submit']");
     registerButton.disabled = true;
 
-    // Check if UID already exists
+    if (!childUID) {
+        showNotification("Child UID cannot be empty.");
+        registerButton.disabled = false;
+        return;
+    }
+
     const uidDoc = doc(db, "usersParent", childUID);
     const uidSnapshot = await getDoc(uidDoc);
 
     if (uidSnapshot.exists()) {
         showNotification("This Child UID is already registered.");
-        registerButton.disabled = false; // Re-enable the button
+        registerButton.disabled = false;
     } else {
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, parentEmail, parentPassword);
-
-            // Save parent data in Firestore, including the password
+            await createUserWithEmailAndPassword(auth, parentEmail, parentPassword);
             await setDoc(uidDoc, {
                 parentName: parentName,
                 parentPhone: parentPhone,
                 parentEmail: parentEmail,
-                childUID: childUID,
-                password: parentPassword // Save the password (not recommended)
+                childUID: childUID
             });
 
             showNotification("Registration successful!");
             window.location.href = "../Parents/dashboard.html";
         } catch (error) {
             showNotification("Registration failed: " + error.message);
-            registerButton.disabled = false; // Re-enable the button
+            registerButton.disabled = false;
         }
     }
 });
