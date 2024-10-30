@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../Parents/booking_hidden.css">
     <script type="module" src="../Parents/booking.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="header-container">
@@ -21,22 +23,22 @@
         <form id="bookingForm">
             <h2>Book a Taxi for Your Child</h2>
             <label for="from">From:</label>
-                <select id="from" required>
-                    <option value="Select">Select</option>
-                    <option value="VIT Vellore">VIT Vellore</option>
-                    <option value="Katpadi">Katpadi</option>
-                    <option value="Chennai Airport">Chennai Airport</option>
-                    <option value="Banglore Airport">Banglore Airport</option>
-                </select>
+            <select id="from" required>
+                <option value="Select">Select</option>
+                <option value="VIT Vellore">VIT Vellore</option>
+                <option value="Katpadi">Katpadi</option>
+                <option value="Chennai Airport">Chennai Airport</option>
+                <option value="Banglore Airport">Banglore Airport</option>
+            </select>
 
-                <label for="to">To:</label>
-                <select id="to" required>
-                    <option value="Select">Select</option>
-                    <option value="VIT Vellore">VIT Vellore</option>
-                    <option value="Katpadi">Katpadi</option>
-                    <option value="Chennai Airport">Chennai Airport</option>
-                    <option value="Banglore Airport">Banglore Airport</option>
-                </select>
+            <label for="to">To:</label>
+            <select id="to" required>
+                <option value="Select">Select</option>
+                <option value="VIT Vellore">VIT Vellore</option>
+                <option value="Katpadi">Katpadi</option>
+                <option value="Chennai Airport">Chennai Airport</option>
+                <option value="Banglore Airport">Banglore Airport</option>
+            </select>
 
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
@@ -48,11 +50,11 @@
             <input type="number" id="noOfStudents" name="noOfStudents" min="1" required>
 
             <label for="car">Select Car:</label>
-                <select id="car" required>
-                    <option value="Tata Zest">Tata Zest</option>
-                    <option value="Dzire">Dzire</option>
-                    <option value="Innova">Innova</option>
-                </select>
+            <select id="car" required>
+                <option value="Tata Zest">Tata Zest</option>
+                <option value="Dzire">Dzire</option>
+                <option value="Innova">Innova</option>
+            </select>
 
             <label for="paymentMode">Payment Mode:</label>
             <select id="paymentMode" name="paymentMode" required>
@@ -64,12 +66,21 @@
             <textarea id="message" name="message" placeholder="Additional details" required></textarea>
 
             <button type="submit">Book Taxi</button>
+            <div class="notice">
+                <p>Dear Parents,
+                    Please review the Booking History section to verify your booking details, including date and time.
+
+                    Thank you.</p>
+            </div>
+
         </form>
 
-        <section id="latestBooking">
-            <h2>Latest Booking</h2>
-            <div id="bookingDetails"></div>
-        </section>
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <p>Booking successfully submitted!</p>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
@@ -81,4 +92,5 @@
         <p>&copy; 2024 EasyCab. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
