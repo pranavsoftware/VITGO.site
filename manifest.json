@@ -1,6 +1,6 @@
 {
-  "name": "Easycab",
-  "short_name": "Easycab",
+  "name": "Easycab VITian",
+  "short_name": "Easycab VITian",
   "description": "EasyCab is an Web-App that help VITians to book a taxi and find a Partner to travel",
   "start_url": "splash.html",
   "display": "standalone",
@@ -13,12 +13,12 @@
       "type": "image/png"
     },
     {
-      "src": "../assets/webapp logo 512x512_image.png",
+      "src": "../assets/logo (1).png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "../assets/web app 192 logo.jpg",
+      "src": "../assets/logo (1).png",
       "sizes": "180x180",
       "type": "image/png"
     }
