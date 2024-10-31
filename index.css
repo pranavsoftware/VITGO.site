@@ -41,10 +41,14 @@ body {
 }
 
 .logo img {
-    width: 60px;
+    width: 60px; /* Set the desired width */
+    height: 60px; /* Ensure the height matches the width for a perfect circle */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and fills the circle */
     margin-right: 15px;
     transition: transform 0.3s ease;
 }
+
 
 .logo h1 {
     color: #ffffff;
