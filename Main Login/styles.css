@@ -36,9 +36,11 @@ a {
 }
 
 .header .logo img {
-    width: 50px;
-    height: auto;
+    width: 50px; /* Keep the width as is */
+    height: 50px; /* Set height equal to width for a perfect circle */
     margin-right: 1rem;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circle */
 }
 
 .header h1 {
