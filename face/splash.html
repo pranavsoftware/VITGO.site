@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCab</title>
+    <style>
+        /* styles.css */
+
+        /* Splash Screen Styles */
+        .splash-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            z-index: 9999; /* Make sure it's on top */
+            padding: 20px; /* Add padding to prevent edge touching */
+            box-sizing: border-box; /* Include padding in height calculations */
+        }
+
+        .logo {
+            width: 150px; /* Default size for logos */
+            margin: 10px;
+            max-width: 100%; /* Ensure logo is responsive */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0; /* Start hidden */
+            animation: slideIn 1.3s forwards; /* Animation for logos */
+        }
+
+        /* Animation for Logo 1 from the left */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%); /* Start from the left */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* End in center */
+                opacity: 1;
+            }
+        }
+
+        /* Animation for Logo 2 from the right */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%); /* Start from the right */
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); /* End in center */
+                opacity: 1;
+            }
+        }
+
+        /* Animation for welcome text */
+        .welcome-text {
+            font-size: 2em; /* Adjust font size for larger screens */
+            margin-top: 20px;
+            text-align: center; /* Center text */
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 2s forwards; /* Animation for text */
+            animation-delay: 1.5s; /* Delay for logo display */
+        }
+
+        /* Animation for footer text */
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1em; /* Adjust font size */
+            color: #555;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 2s forwards; /* Animation for footer text */
+            animation-delay: 3s; /* Delay to match the splash duration */
+        }
+
+        /* Fade in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Main Content Styles */
+        .hidden {
+            display: none; /* Hide main content initially */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo {
+                width: 120px; /* Smaller logo for tablets */
+            }
+
+            .welcome-text {
+                font-size: 1.5em; /* Smaller font size for tablets */
+            }
+
+            .footer-text {
+                font-size: 0.9em; /* Smaller footer text for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 100px; /* Even smaller logo for mobile */
+            }
+
+            .welcome-text {
+                font-size: 1.2em; /* Smaller font size for mobile */
+            }
+
+            .footer-text {
+                font-size: 0.8em; /* Smaller footer text for mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <img src="../assets/VIT Logo.jpeg" alt="Logo 1" class="logo" style="animation: slideInLeft 1.3s forwards;">
+        <img src="../assets/logo (1).png" alt="Logo 2" class="logo" style="animation: slideInRight 1.3s forwards;">
+        <h1 class="welcome-text">Welcome to EasyCab VITian</h1>
+        <p class="footer-text">Made by VITian</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Your main app content goes here -->
+    </div>
+
+    <script>
+        // Redirect after the splash screen
+        document.addEventListener('DOMContentLoaded', () => {
+            const splashScreen = document.getElementById('splash-screen');
+
+            // Show splash screen for 4.5 seconds
+            setTimeout(() => {
+                splashScreen.style.display = 'none'; // Hide the splash screen
+                window.location.href = '../face/index.html'; // Redirect to the login page
+            }, 5000); // 4500 milliseconds (4.5 seconds)
+        });
+    </script>
+</body>
+
+</html>
