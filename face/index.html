@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon-iphone-60x60.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/apple-touch-icon-ipad-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/apple-touch-icon-iphone-retina-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/apple-touch-icon-ipad-retina-152x152.png">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Login</title>
     <link rel="stylesheet" href="../face/styles_hidden.css">
-    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
-    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <link rel="manifest" href="../index/manifest.json">
     <!-- face-api.js via CDN -->
     <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
     <!-- Firebase -->
@@ -40,12 +47,25 @@
                     <p>Get started by logging in or signing up</p>
                     <button id="login-btn">Login</button>
                     <button id="register-btn">Register</button>
+                    <button id="instruction-video-btn" class="instruction-btn">Instruction Video</button>
+                </div>
+                <!-- Modal Structure -->
+                <div id="videoModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <video id="instruction-video" preload="metadata" autoplay muted controls>
+                            <source src="../assets/Guidence.mp4" type="video/mp4">
+                            <!-- Update with your video path -->
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
 
                 <!-- Login Form -->
                 <form id="login-form" class="form hidden">
                     <h2>Login</h2>
-                    <input type="email" id="login-email" placeholder="Email @vit.ac.in or @vitstudent.ac.in" required>
+                    <input type="email" id="login-email" placeholder="Please enter your official VIT email ID:"
+                        required>
                     <input type="password" id="login-password" placeholder="Password" required>
                     <div id="login-video-container">
                         <video id="login-video" width="320" height="240" autoplay muted></video>
@@ -60,7 +80,7 @@
                 <form id="register-form" class="form hidden">
                     <h2>Register</h2>
                     <input type="text" id="register-name" placeholder="Name" required>
-                    <input type="email" id="register-email" placeholder="Email @vit.ac.in or @vitstudent.ac.in"
+                    <input type="email" id="register-email" placeholder="Please enter your official VIT email ID:"
                         required>
                     <input type="password" id="register-password" placeholder="Password" required>
                     <div id="register-video-container">
@@ -71,7 +91,8 @@
                     <p id="register-status"></p>
                     <div class="terms">
                         <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="../Terms&Condition/Terms and condition.html">Terms and Conditions</a></label>
+                        <label for="terms">I agree to the <a href="../Terms&Condition/Terms and condition.html">Terms
+                                and Conditions</a></label>
                     </div>
                     <button type="submit">Register</button>
                 </form>
@@ -83,8 +104,8 @@
     <footer>
         <p>&copy; 2024 Easycab. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://www.instagram.com/easy_cab24.7/"><img src="../assets/instagram.jpeg" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/company/easycab-24-7/"><img src="../assets/Linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="../assets/instagram.jpeg" alt="Instagram"></a>
+            <a href="#"><img src="../assets/Linkedin.png" alt="LinkedIn"></a>
         </div>
     </footer>
 </body>
