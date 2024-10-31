@@ -8,8 +8,8 @@
 /* Body Styling */
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #333;
+    color: #ffffff;
     line-height: 1.6;
     transition: background-color 0.3s ease;
     scroll-behavior: smooth;
@@ -20,9 +20,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(49, 47, 47, 0.85);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(216, 213, 213, 0.1);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@ body {
 }
 
 .transparent-header.scrolled {
-    background: rgba(255, 255, 255, 1);
+    background: rgb(78, 71, 71);
 }
 
 .logo {
@@ -47,7 +47,7 @@ body {
 }
 
 .logo h1 {
-    color: #000;
+    color: #ffffff;
     font-size: 24px;
     font-weight: bold;
 }
@@ -73,7 +73,7 @@ body {
 
 .menu-list li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -90,12 +90,12 @@ body {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: url('../assets/backgroundimage.jpeg') no-repeat center center/cover;
+    background: url('../assets/EasyCab\ Diwali\ 2.png') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #fffafa;
     position: relative;
     padding: 20px;
     transition: background 0.3s ease;
@@ -205,13 +205,13 @@ body {
     text-align: center;
     margin: 20px;
     padding: 20px;
-    background-color: #f8f9fa; /* Light background */
+    background-color: #181818; /* Light background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #333; /* Dark text color for the heading */
+    color: #ffffff; /* Dark text color for the heading */
 }
 
 .button-container {
@@ -252,7 +252,7 @@ h2 {
 /* Review Section */
 .review-section {
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #2e2b2b;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     max-width: 800px;
@@ -266,7 +266,7 @@ h2 {
 .review-title {
     font-size: 2.2em;
     margin-bottom: 30px;
-    color: #333;
+    color: #fdfdfd;
     font-weight: bold;
 }
 
@@ -298,12 +298,12 @@ h2 {
     font-size: 1.4em;
     margin-bottom: 10px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
 }
 
 .student-review {
     font-size: 1.1em;
-    color: #666;
+    color: #ffffff;
 }
 
 .prev, .next {
@@ -323,7 +323,7 @@ h2 {
 
 /* Footer Styling */
 footer {
-    background-color: #333;
+    background-color: #111010;
     color: #fff;
     text-align: center;
     padding: 40px 20px;
@@ -411,10 +411,10 @@ footer a:hover {
 @media (max-width: 768px) {
     .menu-list {
         flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(36, 34, 34, 0.95);
         position: absolute;
         top: 60px;
-        right: 0;
+        right: -31px;
         width: 1100%;
         display: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -426,7 +426,8 @@ footer a:hover {
     .menu-list.active {
         display: flex;
         opacity: 1;
-        transform: translateX(0);
+        width: 1450%; /* Full width */
+        height: 91vh; /* Height set to 50% of the viewport height */
         animation: slideIn 0.3s ease;
     }
 
@@ -440,7 +441,7 @@ footer a:hover {
         border: none;
         font-size: 28px;
         cursor: pointer;
-        color: #333;
+        color: #ffffff;
         transition: color 0.3s ease;
     }
 
