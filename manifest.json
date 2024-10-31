@@ -2,7 +2,7 @@
   "name": "Easycab",
   "short_name": "Easycab",
   "description": "EasyCab is an Web-App that help VITians to book a taxi and find a Partner to travel",
-  "start_url": "index.html",
+  "start_url": "../index/splash.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007BFF",
