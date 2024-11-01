@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../control Panel/Registerations_hidden.css">
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <title>User Details</title>
+</head>
+<body>
+    <!-- Spinner for loading -->
+    <div class="spinner" id="spinner">
+        <video autoplay loop muted>
+            <source src="../assets/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="loading-text">Loading user details...</div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="../assets/logo (1).png" alt="Company Logo">
+            <h1>Easycab</h1>
+        </div>
+        <button class="go-back" onclick="goBack()">Go Back</button>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search users...">
+        </div>
+
+        <div class="user-details" id="userDetails">
+            <!-- User details will be populated here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../control Panel/Registeration.js"></script>
+</body>
+</html>

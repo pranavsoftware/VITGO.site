@@ -1,0 +1,166 @@
+/* Planlist.css */
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Spinner styles */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it overlays above everything */
+}
+
+.spinner video {
+    width: 30%; /* Adjusted width of the video */
+    max-width: 300px; /* Maximum width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Loading text styles */
+.loading-text {
+    font-size: 1.5em; /* Adjust font size */
+    margin-top: 10px; /* Space between video and text */
+}
+
+/* General Header Styles */
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.go-back {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.go-back:hover {
+    background-color: #e64a19;
+}
+
+/* Main Content Styling */
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 80%;
+    max-width: 600px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.post-plan-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .go-back {
+        margin-top: 10px;
+    }
+
+    #searchBar {
+        width: 90%;
+    }
+
+    .spinner video {
+        width: 50%; /* Adjusted for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .spinner video {
+        width: 70%; /* Further adjusted for mobile devices */
+    }
+
+    .loading-text {
+        font-size: 1.2em; /* Smaller loading text for mobile */
+    }
+}

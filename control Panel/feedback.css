@@ -1,0 +1,252 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Go Back Button */
+.go-back {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+.go-back:hover {
+    background-color: #e64a19;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Feedback Container */
+.feedback-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.feedback-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.feedback-item:last-child {
+    border-bottom: none;
+}
+
+.feedback-user {
+    font-weight: bold;
+    color: #333;
+}
+
+.feedback-message {
+    color: #555;
+    margin-top: 5px;
+}
+
+.feedback-rating {
+    color: #888;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.feedback-timestamp {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff5722;
+}
+
+/* Responsive Design */
+/* Tablets and Medium Screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .company-name {
+        font-size: 20px;
+    }
+
+    .feedback-container {
+        width: calc(100% - 40px);
+        margin: 10px auto;
+    }
+
+    .go-back {
+        width: auto;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+/* Mobile Devices and Small Screens */
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .company-name {
+        font-size: 18px;
+    }
+
+    .go-back {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .feedback-container {
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+
+    .feedback-item {
+        padding: 10px 0;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .social-links {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .social-links a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Spinner styles */
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it overlays above everything */
+    visibility: hidden; /* Hidden by default */
+}
+
+.spinner video {
+    width: 25%; /* 25% of the width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Loading text styles */
+.loading-text {
+    font-size: 1.5em; /* Adjust font size */
+    margin-top: 10px; /* Space between video and text */
+    text-align: center; /* Center the loading text */
+}
+
+/* Responsive styles for the spinner */
+@media (max-width: 768px) {
+    .spinner video {
+        width: 35%; /* Adjusted for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .spinner video {
+        width: 45%; /* Adjusted for mobile devices */
+    }
+
+    .loading-text {
+        font-size: 1.2em; /* Smaller loading text for mobile */
+    }
+}

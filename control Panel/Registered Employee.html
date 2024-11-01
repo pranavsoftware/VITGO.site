@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="icon" href="../assets/tab logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../control Panel/Registered Employee.css">
+    <script type="module" src="../control Panel/Registered Employee.js" defer></script>
+</head>
+
+<body>
+    <!-- Spinner for loading -->
+    <div class="spinner" id="spinner">
+        <video autoplay loop muted>
+            <source src="../assets/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="loading-text">Please wait, loading employee data...</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/logo (1).png" alt="Company Logo">
+                <span>EasyCab</span>
+            </div>
+            <button class="go-back" onclick="history.back()">Go Back</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Employee Directory</h2>
+        <div id="employee-list" class="employee-list"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Example JavaScript to control the spinner visibility
+        document.addEventListener("DOMContentLoaded", function () {
+            const spinner = document.getElementById('spinner');
+
+            // Show the spinner when the page starts loading
+            spinner.style.display = 'flex';
+
+            // Simulate a loading process (replace with actual data loading)
+            setTimeout(() => {
+                // Hide the spinner after loading is complete
+                spinner.style.display = 'none';
+            }, 3000); // Adjust the timeout to simulate loading time
+        });
+    </script>
+</body>
+
+</html>
