@@ -5,15 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Plan</title>
-   <link rel="icon" href="../assets/tab logo.ico.png" type="image/x-icon">
-    <link rel="manifest" href="../index/manifest.json">
+    <link rel="icon" href="../assets/tab logo.ico.png" type="image/x-icon">
     <link rel="stylesheet" href="../Post/Post_hidden.css">
     <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js"></script>
     <script type="module" src="../Post/post plan.js" defer></script>
+
+    <style>
+        /* Pop-up modal styles */
+        #visit-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #visit-popup-content {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        #visit-popup-content h2 {
+            margin-top: 0;
+        }
+
+        #close-visit-popup {
+            margin-top: 20px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #close-visit-popup:hover {
+            background-color: #555;
+        }
+    </style>
+
+    <script>
+        // JavaScript to display the pop-up on page load and close it
+        document.addEventListener("DOMContentLoaded", function () {
+            const visitPopup = document.getElementById("visit-popup");
+            const closeVisitPopupButton = document.getElementById("close-visit-popup");
+
+            // Show the pop-up when the page loads
+            visitPopup.style.display = "flex";
+
+            // Close the pop-up when the close button is clicked
+            closeVisitPopupButton.addEventListener("click", function () {
+                visitPopup.style.display = "none";
+            });
+        });
+    </script>
 </head>
 
 <body>
+    <!-- Pop-up Modal on Visit -->
+    <div id="visit-popup">
+        <div id="visit-popup-content">
+            <h2>Welcome to EasyCab!</h2>
+            <p>Ensure your plan details are accurate before posting. Incorrect details cannot be edited. Thank you!</p>
+            <button id="close-visit-popup">Close</button>
+        </div>
+    </div>
+
     <header class="transparent-header">
         <div class="logo">
             <img src="../assets/logo.jpeg" alt="Company Logo">
@@ -31,56 +99,23 @@
         <main class="form-container">
             <h2>Post Your Plan</h2>
             <form id="postPlanForm">
-                <label for="university">University:</label>
+                <label for="university">VIT's Campus:</label>
                 <select id="university" required>
-                    <option value="">Select Campus</option>
+                    <option value="">Select University</option>
                     <option value="VIT Vellore">VIT Vellore</option>
                     <option value="VIT Chennai">VIT Chennai</option>
                     <option value="VIT Bhopal">VIT Bhopal</option>
-                    <option value="VIT-AP Amaravati">VIT-AP Amaravati</option>
+                    <option value="VIT AP">VIT AP</option>
                 </select>
 
                 <label for="fromState">From State:</label>
                 <select id="fromState" required>
                     <option value="">Select State</option>
-                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Chhattisgarh">Chhattisgarh</option>
-                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu
-                </option>
-                <option value="Delhi">Delhi</option>
-                <option value="Goa">Goa</option>
-                <option value="Gujarat">Gujarat</option>
-                <option value="Haryana">Haryana</option>
-                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                <option value="Jharkhand">Jharkhand</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Kerala">Kerala</option>
-                <option value="Ladakh">Ladakh</option>
-                <option value="Lakshadweep">Lakshadweep</option>
-                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Manipur">Manipur</option>
-                <option value="Meghalaya">Meghalaya</option>
-                <option value="Mizoram">Mizoram</option>
-                <option value="Nagaland">Nagaland</option>
-                <option value="Odisha">Odisha</option>
-                <option value="Puducherry">Puducherry</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Sikkim">Sikkim</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Telangana">Telangana</option>
-                <option value="Tripura">Tripura</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                <option value="Uttarakhand">Uttarakhand</option>
-                <option value="West Bengal">West Bengal</option>
-
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Rajasthan">Rajasthan</option>
                 </select>
 
                 <label for="fromCity">From City:</label>
@@ -95,45 +130,12 @@
 
                 <label for="toState">To State:</label>
                 <select id="toState" required>
-                   <option value="">Select State</option>
-                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Chhattisgarh">Chhattisgarh</option>
-                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu
-                </option>
-                <option value="Delhi">Delhi</option>
-                <option value="Goa">Goa</option>
-                <option value="Gujarat">Gujarat</option>
-                <option value="Haryana">Haryana</option>
-                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                <option value="Jharkhand">Jharkhand</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Kerala">Kerala</option>
-                <option value="Ladakh">Ladakh</option>
-                <option value="Lakshadweep">Lakshadweep</option>
-                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Manipur">Manipur</option>
-                <option value="Meghalaya">Meghalaya</option>
-                <option value="Mizoram">Mizoram</option>
-                <option value="Nagaland">Nagaland</option>
-                <option value="Odisha">Odisha</option>
-                <option value="Puducherry">Puducherry</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Sikkim">Sikkim</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Telangana">Telangana</option>
-                <option value="Tripura">Tripura</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                <option value="Uttarakhand">Uttarakhand</option>
-                <option value="West Bengal">West Bengal</option>
-
+                    <option value="">Select State</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Rajasthan">Rajasthan</option>
                 </select>
 
                 <label for="toCity">To City:</label>
@@ -170,12 +172,12 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://www.instagram.com/easy_cab24.7/">Instagram</a> | <a href="https://www.linkedin.com/company/easycab-24-7/">LinkedIn</a>
-              </div>
-              <p>&copy; 2024 Easycab. All Rights Reserved.</p>
+                <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi">Instagram</a> | <a
+                    href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true">LinkedIn</a>
+            </div>
+            <p>&copy; 2024 Easycab. All Rights Reserved.</p>
         </div>
     </footer>
-<script type="module" src="../Post/post plan.js" ></script>
 </body>
 
 </html>
