@@ -4,10 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - EasyCab</title>
-    <link rel="icon" href="../assets/tab logo.ico.png" type="image/x-icon">
+    <meta property="og:title" content="EasyCab" />
+    <meta property="og:description" content="Made by VITian." />
+    <meta property="og:image" content="https://easycab.site/assets/logo%20(1).png" />
+    <meta property="og:url" content="https://easycab.site/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EasyCab" />
+    <meta name="twitter:description" content="Made by VITian." />
+    <meta name="twitter:image" content="https://easycab.site/assets/logo%20(1).png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EasyCab">
+    <link rel="apple-touch-icon" href="../assets/logo (1).png">
+    <link rel="apple-touch-startup-image" href="../assets/logo (1).png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+    <title>About Us - Easycab</title>
+    <link rel="icon" href="../assets/logo (1).png" type="image/x-icon">
     <link rel="stylesheet" href="../About Us/About Us_hidden.css">
-    <script src="../About Us/About Us_hidden.js" defer></script>
+    <script src="../About Us/About Us.js" defer></script>
 </head>
 
 <body>
@@ -23,9 +42,19 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="index.html">Go Back</a></li>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             </ul>
         </nav>
     </header>
+
+    <!-- Spinner Section -->
+    <div class="spinner" id="spinner">
+        <video autoplay loop muted>
+            <source src="../assets/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Loading, please wait...</p>
+    </div>
 
     <!-- Background Image Section -->
     <section class="hero-section">
@@ -130,7 +159,7 @@
 
             <div class="zigzag">
                 <div class="image">
-                    <img src="../assets/Atharva.jpg" alt="Team Member 5 Image">
+                    <img src="../assets/Atharva.jpg" alt="Atharva Bhangale">
                 </div>
                 <div class="text">
                     <h3>Atharva Bhangale</h3>
@@ -146,6 +175,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="zigzag reverse">
+                <div class="image">
+                    <img src="../assets/ashu4.jpg" alt="Ashu Malik">
+                </div>
+                <div class="text">
+                    <h3>Ashu Malik</h3>
+                    <p>I had the chance to get to know UI/UX design of the website in the process, ensuring that it's
+                        intuitive, professional, and user-friendly with Team EasyCab. Me, being the social media content
+                        creator, shared the updates and the engaging visuals with our community so that everyone remains
+                        well-informed and connected.</p>
+                    <div class="social-media">
+                        <a href="https://www.linkedin.com/in/atharva-bhangale-092121250" target="_blank"
+                            class="social-btn">LinkedIn</a>
+                        <a href="#" class="social-btn">Instagram</a>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Contact Section -->
@@ -156,7 +204,9 @@
                     <p>We'd love to hear from you! Get in touch with us to learn more about how we can work together.
                         Email - easycab.site@gmail.com
                     </p>
-                    <p>We'd love to hear your thoughts on your experience with our site! Please share your feedback <a href="https://easycab.site/FeedBack/feedback.html" target="_blank">here</a> and help us improve.</p>
+                    <p>We'd love to hear your thoughts on your experience with our site! Please share your feedback <a
+                            href="https://easycab.site/FeedBack/feedback.html" target="_blank">here</a> and help us
+                        improve.</p>
                 </div>
                 <div class="image">
                     <img src="../assets/contact us.jpeg" alt="Contact Us Image">
@@ -167,16 +217,11 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://www.instagram.com/easy_cab24.7/">Instagram</a> | <a href="https://www.linkedin.com/company/easycab-24-7/">LinkedIn</a>
-          </div>
-          <p>&copy; 2024 Easycab. All Rights Reserved.</p>
+            <a href="https://www.instagram.com/easy_cab24.7?igsh=bmxvcDZzcDdoMGFi">Instagram</a> | <a
+                href="https://www.linkedin.com/company/easycab-24-7/?viewAsMember=true">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Easycab. All Rights Reserved.</p>
     </footer>
-    <script>
-        function toggleMenu() {
-            const menuList = document.querySelector('.menu-list');
-            menuList.classList.toggle('show');
-        }        
-    </script>
 </body>
 
 </html>
