@@ -72,7 +72,7 @@ header .logo h1 {
 
 .nav-menu ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -81,31 +81,6 @@ header .logo h1 {
     color: #979fa3;
 }
 
-/* Spinner */
-.spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 999;
-}
-
-.spinner video {
-    width: 80px;
-    height: 80px;
-}
-
-.spinner p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #555;
-}
 
 /* Hero Section */
 .hero-section {
