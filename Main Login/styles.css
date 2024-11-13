@@ -1,4 +1,4 @@
-/* Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +14,8 @@ body {
     background-color: #f8f9fa;
     color: #333;
     font-size: 16px;
+    padding-top: 70px; /* Space for fixed header */
+    padding-bottom: 50px; /* Space for fixed footer */
 }
 
 a {
@@ -25,9 +27,14 @@ a {
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
     background-color: #333;
     color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header .logo {
@@ -36,11 +43,11 @@ a {
 }
 
 .header .logo img {
-    width: 50px; /* Keep the width as is */
-    height: 50px; /* Set height equal to width for a perfect circle */
+    width: 50px;
+    height: 50px;
     margin-right: 1rem;
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensures the image fits well within the circle */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .header h1 {
@@ -119,7 +126,7 @@ a {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    width: 180px; /* Updated width for better layout */
+    width: 180px;
     padding: 1rem;
 }
 
@@ -150,6 +157,9 @@ a {
 
 /* Footer */
 .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 1rem;
     background-color: #343a40;
     color: #ffffff;
@@ -170,13 +180,13 @@ a {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .login-option {
-        width: 160px; /* Adjusted for medium screens */
+        width: 160px;
     }
 }
 
 @media (max-width: 992px) {
     .login-option {
-        width: 140px; /* Adjusted for smaller screens */
+        width: 140px;
     }
 
     .footer {
@@ -186,42 +196,46 @@ a {
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Slightly smaller font for mobile */
+        font-size: 14px;
     }
 
     .login-buttons {
-        gap: 1rem; /* Reduced gap for mobile */
+        gap: 1rem;
+        flex-direction: row;
+        overflow-x: auto; /* Allow horizontal scrolling on mobile */
+        white-space: nowrap;
     }
 
     .login-option {
-        width: 120px; /* Adjusted for mobile */
+        width: 120px;
+        display: inline-block;
     }
 
     .header {
-        flex-direction: column; /* Stack logo and title */
-        align-items: flex-start; /* Align items to start */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .header h1 {
-        font-size: 1.3rem; /* Smaller header font size */
+        font-size: 1.3rem;
     }
 
     .notice-container {
-        padding: 1rem; /* Reduced padding for mobile */
-        margin: 1rem; /* Reduced margin for mobile */
+        padding: 1rem;
+        margin: 1rem;
     }
 
     .footer {
-        font-size: 0.75rem; /* Smaller footer font size for mobile */
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .header {
-        padding: 1rem; /* Adjust padding for very small screens */
+        padding: 1rem;
     }
 
     .notice-container h1 {
-        font-size: 1.5rem; /* Smaller title font size */
+        font-size: 1.5rem;
     }
 }
