@@ -26,7 +26,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -55,6 +55,7 @@ header .logo h1 {
 
 .nav-menu .menu-toggle {
     display: none;
+    background-color: #ffffff;
     font-size: 24px;
     background: none;
     border: none;
@@ -216,6 +217,7 @@ footer p {
 
     .nav-menu .menu-toggle {
         display: block;
+        background-color: #ffffff;
     }
 
     .nav-menu.active ul {
@@ -288,5 +290,6 @@ footer p {
 @media (min-width: 768px) {
     .menu-list {
         display: flex;
+        background-color: #ffffff;
     }
 }
