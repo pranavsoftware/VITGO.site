@@ -20,7 +20,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(49, 47, 47, 0.85);
+    background: rgb(0, 0, 0);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(216, 213, 213, 0.1);
     z-index: 1000;
@@ -41,17 +41,15 @@ body {
 }
 
 .logo img {
-    width: 60px; /* Set the desired width */
-    height: 60px; /* Ensure the height matches the width for a perfect circle */
-    border-radius: 50%; /* This makes the image circular */
-    object-fit: cover; /* Ensures the image maintains aspect ratio and fills the circle */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-right: 15px;
     transition: transform 0.3s ease;
 }
 
-
 .logo h1 {
-    color: #ffffff;
     font-size: 24px;
     font-weight: bold;
 }
@@ -72,7 +70,6 @@ body {
 
 .menu-list li {
     margin-left: 20px;
-    position: relative;
 }
 
 .menu-list li a {
@@ -94,15 +91,14 @@ body {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: url('../assets/EasyCab\ Diwali\ 2.png') no-repeat center center/cover;
+    background: url('../assets/backgroundimage.jpeg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
     text-align: center;
-    color: #fffafa;
-    position: relative;
     padding: 20px;
-    transition: background 0.3s ease;
+    position: relative;
 }
 
 .hero-content {
@@ -110,24 +106,17 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.hero-content:hover {
-    transform: translateY(-10px);
 }
 
 .hero-content h2 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    font-weight: 600;
     color: #ff6347;
 }
 
 .hero-content p {
     font-size: 1.4em;
     margin-bottom: 30px;
-    line-height: 1.5;
 }
 
 .hero-button {
@@ -137,8 +126,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-button:hover {
@@ -155,19 +144,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 80px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.zigzag:hover {
-    transform: translateY(-10px);
-    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px; /* Reduced margin */
 }
 
 .zigzag .text {
     flex: 1;
     margin-right: 30px;
-    transition: transform 0.3s ease;
 }
 
 .zigzag .image {
@@ -178,11 +160,6 @@ body {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.zigzag img:hover {
-    transform: scale(1.05);
 }
 
 .reverse {
@@ -209,81 +186,59 @@ body {
     text-align: center;
     margin: 20px;
     padding: 20px;
-    background-color: #181818; /* Light background */
+    background-color: #181818;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #ffffff; /* Dark text color for the heading */
+    color: #ffffff;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
 }
 
-.btn-android {
-    background-color: #333d37; /* Android Green */
-    color: white; /* Text color */
-    padding: 15px 25px; /* Button padding */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+.btn-android, .btn-ios {
+    background-color: #333d37;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.btn-android:hover {
-    background-color: #333d37; /* Darker shade on hover */
+.btn-android:hover, .btn-ios:hover {
+    background-color: #333d37;
 }
-
-.btn-ios {
-    background-color: #333d37; /* iOS Blue */
-    color: white; /* Text color */
-    padding: 15px 25px; /* Button padding */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.btn-ios:hover {
-    background-color: #333d37; /* Darker shade on hover */
-}
-
 
 /* Review Section */
 .review-section {
     padding: 50px 20px;
     background-color: #2e2b2b;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 1s ease;
+    text-align: center;
 }
 
 .review-title {
     font-size: 2.2em;
     margin-bottom: 30px;
     color: #fdfdfd;
-    font-weight: bold;
 }
 
 .review-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: space-between;
 }
 
 .review {
     display: none;
-    text-align: center;
-    width: 100%;
 }
 
 .review.active {
@@ -291,11 +246,9 @@ h2 {
 }
 
 .student-photo {
-    width: 112px;
-    height: 112px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
 }
 
 .student-name {
@@ -330,11 +283,9 @@ footer {
     background-color: #111010;
     color: #fff;
     text-align: center;
-    padding: 40px 20px;
-    position: relative;
-    bottom: 0;
+    padding: 2px 20px;
     width: 100%;
-    animation: fadeIn 1s ease;
+    position: relative;
 }
 
 footer .footer-content {
@@ -344,9 +295,9 @@ footer .footer-content {
 
 footer a {
     color: #fff;
-    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
@@ -379,38 +330,6 @@ footer a:hover {
     transform: scale(1.1);
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
 /* Responsive Styling */
 @media (max-width: 768px) {
     .menu-list {
@@ -430,13 +349,9 @@ footer a:hover {
     .menu-list.active {
         display: flex;
         opacity: 1;
-        width: 1450%; /* Full width */
-        height: 91vh; /* Height set to 50% of the viewport height */
+        width: 800%;
+        height: 76vh;
         animation: slideIn 0.3s ease;
-    }
-
-    .menu-list li {
-        margin: 10px 0; /* Adjust spacing for vertical layout */
     }
 
     .menu-toggle {
@@ -455,13 +370,46 @@ footer a:hover {
 
     .zigzag {
         flex-direction: column;
+        text-align: center;
     }
 
-    .zigzag .text, .zigzag .image {
-        margin: 0;
+    .zigzag img {
+        width: 100%;
     }
 
-    .footer-social-buttons {
-        flex-direction: column;
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
     }
 }
